@@ -77,9 +77,9 @@ class ChangeLanes():
             if child.tag == "type":
                 attributesDict = child.attrib
                 if attributesDict["id"] in laneTypeList:
-                    if str(attributesDict["oneway"]) == 0:
+                    if str(attributesDict["oneway"]) == "0":
                         child.set("oneway", "1")
-                    else:
+                    elif str(attributesDict["oneway"]) == "1":
                         child.set("oneway", "0")
         if newFileName is None:
             self._tree.write(self._fileName)
