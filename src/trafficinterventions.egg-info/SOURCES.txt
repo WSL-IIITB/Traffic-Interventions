@@ -4,6 +4,7 @@ pyproject.toml
 setup.cfg
 src/trafficinterventions/ChangeEdges.py
 src/trafficinterventions/ChangeLanes.py
+src/trafficinterventions/SpeedCamera.py
 src/trafficinterventions/__init__.py
 src/trafficinterventions.egg-info/PKG-INFO
 src/trafficinterventions.egg-info/SOURCES.txt
