@@ -1,6 +1,10 @@
 [build-system]
 requires = [
     "setuptools>=42",
-    "wheel"
+    "wheel",
+    "numpy",
+    "traci",
+    "sumolib",
+    "pandas"
 ]
 build-backend = "setuptools.build_meta"

@@ -1,7 +1,7 @@
 Metadata-Version: 2.1
 Name: trafficinterventions
-Version: 1.0.1
-Summary: Python Package to perform simple Traffic Interventions.
+Version: 1.0.3
+Summary: Python Package to perform simple Traffic Interventions and run traffic simulations.
 Home-page: https://github.com/WSL-IIITB/Traffic-Interventions
 Author: WSL, IIITB
 Author-email: WSL1@iiitb.ac.in
@@ -19,13 +19,15 @@ License-File: LICENSE
 
 ## Installation
 - `python -m pip install --upgrade pip`
-- `pip install trafficinterventions xml`
+- `pip install --upgrade trafficinterventions`
 
 --- 
 ## Documentation
 All relevant files can be found [here](https://github.com/WSL-IIITB/Traffic-Interventions/tree/main/docs)
 
 --- 
+
+## Interventions
 
 ### Sample Usage : Edge Manipulation
 ```py
@@ -49,5 +51,41 @@ cl = trafficinterventions.ChangeLanes.ChangeLanes(fileName="sample.xml")
 ce.changePriorityLanes(["highway.cycleway"], 100, "new_file.xml")
 
 ```
+## Simulations
 
+### Sample Usage: Speed Camera Placement
+```py
+import trafficinterventions
+
+
+sc = trafficinterventions.SpeedCamera.SpeedCamera(
+    maxTimeSteps= 1000,
+    nearestNeighbourDisallow= 250.0,
+    gridArray=[-10000,10000,10000,-10000],
+    pathCFG="map.sumocfg",
+    outPath="Outputs/",
+    summaryFilePath="summary.txt",
+    numLocs=5
+)
+
+# Run the simulation and get outputs
+sc.runSimulation() 
+```
+---
+
+### Sample Usage: Stressed Junctions Detection
+```py
+sj = trafficinterventions.StressJunction.StressJunction(
+        maxTimeSteps=1000, 
+        weightsArray=[1,1,1,1,1], 
+        pathCFG="map.sumocfg", 
+        outPath="Outputs/", 
+        pathNET="osm.net.xml", 
+        pathSummaryFile="stressed_junctions.txt", 
+        numLocs = 5
+)
+
+# Run the simulation and get outputs   
+sj.runSimulation()
+```
 

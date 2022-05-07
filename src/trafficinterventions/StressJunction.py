@@ -259,17 +259,4 @@ class StressJunction:
         # Running the loop
         traci.start([sumoBinary, "-c", self.pathCFG, "--tripinfo-output", self.outPath + "tripinfo.xml", "--time-to-teleport", "-1"])
         self.loop()
-
-
-if __name__ == "__main__":
-    sj = StressJunction(
-        maxTimeSteps=1000,
-        weightsArray=[1,1,1,1,1],
-        pathCFG="/home/vijay/Desktop/labs/atl/main-repo/ATL/jan2022-pe-code/interventions/Scenarios/High_Traffic/map.sumocfg",
-        outPath="/home/vijay/Desktop/labs/atl/main-repo/ATL/jan2022-pe-code/interventions/Scenarios/High_Traffic/Outputs/",
-        pathNET="/home/vijay/Desktop/labs/atl/main-repo/ATL/jan2022-pe-code/interventions/Scenarios/High_Traffic/osm.net.xml",
-        pathSummaryFile="here.txt",
-        numLocs = 5
-    )
-
-    sj.runSimulation()
+    

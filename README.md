@@ -54,3 +54,20 @@ sc = trafficinterventions.SpeedCamera.SpeedCamera(
 # Run the simulation and get outputs
 sc.runSimulation() 
 ```
+---
+
+### Sample Usage: Stressed Junctions Detection
+```py
+sj = trafficinterventions.StressJunction.StressJunction(
+        maxTimeSteps=1000, 
+        weightsArray=[1,1,1,1,1], 
+        pathCFG="map.sumocfg", 
+        outPath="Outputs/", 
+        pathNET="osm.net.xml", 
+        pathSummaryFile="stressed_junctions.txt", 
+        numLocs = 5
+)
+
+# Run the simulation and get outputs   
+sj.runSimulation()
+```
