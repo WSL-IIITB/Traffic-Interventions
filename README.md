@@ -58,6 +58,9 @@ sc.runSimulation()
 
 ### Sample Usage: Stressed Junctions Detection
 ```py
+import trafficinterventions
+
+
 sj = trafficinterventions.StressJunction.StressJunction(
         maxTimeSteps=1000, 
         weightsArray=[1,1,1,1,1], 
@@ -70,4 +73,23 @@ sj = trafficinterventions.StressJunction.StressJunction(
 
 # Run the simulation and get outputs   
 sj.runSimulation()
+```
+---
+### Sample Usage: Polluted Junctions Detection
+```py
+import trafficinterventions
+
+
+ej = trafficinterventions.EmissionJunction.EmissionJunction(
+    maxTimeSteps=1000, 
+    pathCFG="map.sumocfg", 
+    outPath="Outputs/", 
+    pathNET="osm.net.xml", 
+    pathSummaryFile="polluted_junctions.txt", 
+    numLocs = 5, 
+    initialPoiLocation = (5064.74,3568.48) 
+)
+
+# Run the simulation and get outputs   
+ej.runSimulation()
 ```

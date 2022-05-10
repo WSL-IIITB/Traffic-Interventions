@@ -128,7 +128,7 @@ class EmissionJunction:
 
         for i in range(locs):
             traci.gui.toggleSelection(junctions[max_list[i][0]].getID(), objType='junction')
-        f = open(self.outPath+'max_polluted_junctions.txt', 'w')
+        f = open(self.pathSummaryFile, 'w')
 
         for i in range(locs):
             traci.gui.toggleSelection(junctions[total_emissions_list[i][0]].getID(), objType='junction')

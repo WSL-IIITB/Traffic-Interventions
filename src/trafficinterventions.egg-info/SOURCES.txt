@@ -4,6 +4,7 @@ pyproject.toml
 setup.cfg
 src/trafficinterventions/ChangeEdges.py
 src/trafficinterventions/ChangeLanes.py
+src/trafficinterventions/EmissionJunction.py
 src/trafficinterventions/SpeedCamera.py
 src/trafficinterventions/StressJunction.py
 src/trafficinterventions/__init__.py
