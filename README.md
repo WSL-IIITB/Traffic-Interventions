@@ -20,7 +20,6 @@ ce = trafficinterventions.ChangeEdges.ChangeEdges(fileName="sample.xml")
 
 # Sample Intervention
 ce.disallowAppendTypes(["bus"], ["-100"], "new_file.xml")
-
 ```
 ---
 
@@ -32,8 +31,21 @@ cl = trafficinterventions.ChangeLanes.ChangeLanes(fileName="sample.xml")
 
 # Sample Intervention
 ce.changePriorityLanes(["highway.cycleway"], 100, "new_file.xml")
-
 ```
+---
+
+### Sample Usage : Trip Manipulation
+```py
+import trafficinterventions
+
+ct = trafficinterventions.ChangeTrips.ChangeTrips(fileName="sample.xml")
+
+# Sample Intervention
+ct.changeTripStartTime([3], 1.00, "new_file.xml")
+```
+---
+
+
 ## Simulations
 
 ### Sample Usage: Speed Camera Placement

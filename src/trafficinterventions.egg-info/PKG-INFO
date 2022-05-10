@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: trafficinterventions
-Version: 2.0.0
+Version: 2.0.1
 Summary: Python Package to perform simple Traffic Interventions and run traffic simulations.
 Home-page: https://github.com/WSL-IIITB/Traffic-Interventions
 Author: WSL, IIITB
@@ -37,7 +37,6 @@ ce = trafficinterventions.ChangeEdges.ChangeEdges(fileName="sample.xml")
 
 # Sample Intervention
 ce.disallowAppendTypes(["bus"], ["-100"], "new_file.xml")
-
 ```
 ---
 
@@ -49,8 +48,21 @@ cl = trafficinterventions.ChangeLanes.ChangeLanes(fileName="sample.xml")
 
 # Sample Intervention
 ce.changePriorityLanes(["highway.cycleway"], 100, "new_file.xml")
-
 ```
+---
+
+### Sample Usage : Trip Manipulation
+```py
+import trafficinterventions
+
+ct = trafficinterventions.ChangeTrips.ChangeTrips(fileName="sample.xml")
+
+# Sample Intervention
+ct.changeTripStartTime([3], 1.00, "new_file.xml")
+```
+---
+
+
 ## Simulations
 
 ### Sample Usage: Speed Camera Placement
