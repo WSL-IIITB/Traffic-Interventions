@@ -1,13 +1,11 @@
 Metadata-Version: 2.1
 Name: trafficinterventions
-Version: 2.0.1
+Version: 2.0.2
 Summary: Python Package to perform simple Traffic Interventions and run traffic simulations.
 Home-page: https://github.com/WSL-IIITB/Traffic-Interventions
 Author: WSL, IIITB
 Author-email: WSL1@iiitb.ac.in
-License: UNKNOWN
 Project-URL: Bug Tracker, https://github.com/WSL-IIITB/Traffic-Interventions/issues
-Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
@@ -97,7 +95,8 @@ sj = trafficinterventions.StressJunction.StressJunction(
         outPath="Outputs/", 
         pathNET="osm.net.xml", 
         pathSummaryFile="stressed_junctions.txt", 
-        numLocs = 5
+        numLocs = 5,
+        initialPoiLocation = (5064.74,3568.48) 
 )
 
 # Run the simulation and get outputs   
@@ -122,4 +121,3 @@ ej = trafficinterventions.EmissionJunction.EmissionJunction(
 # Run the simulation and get outputs   
 ej.runSimulation()
 ```
-

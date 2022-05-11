@@ -68,7 +68,7 @@ class StressJunction:
     """
         @Method: Initialising variables and config
     """ 
-    def __init__(self, maxTimeSteps, weightsArray, pathCFG, outPath, pathNET, pathSummaryFile, numLocs):
+    def __init__(self, maxTimeSteps, weightsArray, pathCFG, outPath, pathNET, pathSummaryFile, numLocs, initialPoiLocation = (5064.74,3568.48)):
         
         # Check for Bash Shortcut
         if "SUMO_HOME" in os.environ:
@@ -87,6 +87,8 @@ class StressJunction:
         self.numLocs = numLocs
         self.net = sumolib.net.readNet(pathNET)
         self.pathSummaryFile = pathSummaryFile
+        self.initialPoiLocation = initialPoiLocation
+
 
         # Option Parser
         optParser = optparse.OptionParser()
@@ -129,7 +131,7 @@ class StressJunction:
         @Method: TraCI simulation step and calculation of positions - run in the runSimulation() method
     """
     def loop(self):
-        traci.poi.add('index',5064.74,3568.48, (255,255,255),layer=202.0)
+        traci.poi.add("index", self.initialPoiLocation[0], self.initialPoiLocation[1], (255,255,255), layer=202.0)
         step = 0
 
         steps = []

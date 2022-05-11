@@ -80,7 +80,8 @@ sj = trafficinterventions.StressJunction.StressJunction(
         outPath="Outputs/", 
         pathNET="osm.net.xml", 
         pathSummaryFile="stressed_junctions.txt", 
-        numLocs = 5
+        numLocs = 5,
+        initialPoiLocation = (5064.74,3568.48) 
 )
 
 # Run the simulation and get outputs   
