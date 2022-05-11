@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: trafficinterventions
-Version: 2.0.2
+Version: 2.0.3
 Summary: Python Package to perform simple Traffic Interventions and run traffic simulations.
 Home-page: https://github.com/WSL-IIITB/Traffic-Interventions
 Author: WSL, IIITB

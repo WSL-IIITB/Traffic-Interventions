@@ -128,11 +128,16 @@ class EmissionJunction:
 
         for i in range(locs):
             traci.gui.toggleSelection(junctions[max_list[i][0]].getID(), objType='junction')
+        
         f = open(self.pathSummaryFile, 'w')
-
         for i in range(locs):
             traci.gui.toggleSelection(junctions[total_emissions_list[i][0]].getID(), objType='junction')
-            f.write(str(junctions[total_emissions_list[i][0]].getID())+'\n')
+            
+            x,y = traci.junction.getPosition(junctions[total_emissions_list[i][0]].getID())
+            lon, lat = traci.simulation.convertGeo(x, y)
+            lon, lat = self.net.convertXY2LonLat(x, y)
+            
+            f.write(str(junctions[total_emissions_list[i][0]].getID())+ +" Coordinates:" + str(lat) + " " + str(lon) +  '\n')
         f.close()
 
         filename = self.outPath+'screenshots/aggregate.jpg'

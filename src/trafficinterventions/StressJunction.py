@@ -234,11 +234,14 @@ class StressJunction:
         
         for i in range(locs):
             traci.gui.toggleSelection(junctions[max_list[i][0]].getID(), objType='junction')
-        f = open(self.pathSummaryFile, 'w')
         
+        f = open(self.pathSummaryFile, 'w')
         for i in range(locs):
             traci.gui.toggleSelection(max_stressed[i][0], objType='junction')
-            f.write(str(max_stressed[i][0])+'\n')
+            x,y = traci.junction.getPosition(max_stressed[i][0])
+            lon, lat = traci.simulation.convertGeo(x, y)
+            lon, lat = self.net.convertXY2LonLat(x, y)
+            f.write(str(max_stressed[i][0])+" Coordinates:" + str(lat) + " " + str(lon) + '\n')
         f.close()
 
         filename = self.outPath+'stress/screenshots/aggregate.jpg'
