@@ -60,7 +60,8 @@ sc = trafficinterventions.SpeedCamera.SpeedCamera(
     pathCFG="map.sumocfg",
     outPath="Outputs/",
     summaryFilePath="summary.txt",
-    numLocs=5
+    numLocs=5,
+    colour=(255,0,0)
 )
 
 # Run the simulation and get outputs
@@ -74,7 +75,6 @@ import trafficinterventions
 
 
 sj = trafficinterventions.StressJunction.StressJunction(
-        maxTimeSteps=1000, 
         weightsArray=[1,1,1,1,1], 
         pathCFG="map.sumocfg", 
         outPath="Outputs/", 
@@ -94,7 +94,6 @@ import trafficinterventions
 
 
 ej = trafficinterventions.EmissionJunction.EmissionJunction(
-    maxTimeSteps=1000, 
     pathCFG="map.sumocfg", 
     outPath="Outputs/", 
     pathNET="osm.net.xml", 
