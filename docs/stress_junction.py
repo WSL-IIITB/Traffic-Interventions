@@ -2,7 +2,6 @@ import trafficinterventions
 
 # Initialiasing the object
 sj = trafficinterventions.StressJunction.StressJunction(
-        maxTimeSteps=1000, # Number of time steps, could be overridden by the system
         weightsArray=[1,1,1,1,1], # Weights for the parameters - in the order of [haltingNumber, CO2Emissions, StepOccupancy, vehicleLength, waitingTime]
         pathCFG="map.sumocfg", # .sumocfg file path
         outPath="Outputs/", # Output path for screenshots

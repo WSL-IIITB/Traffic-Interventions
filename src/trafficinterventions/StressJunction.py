@@ -68,7 +68,7 @@ class StressJunction:
     """
         @Method: Initialising variables and config
     """ 
-    def __init__(self, maxTimeSteps, weightsArray, pathCFG, outPath, pathNET, pathSummaryFile, numLocs, initialPoiLocation = (5064.74,3568.48)):
+    def __init__(self,  weightsArray, pathCFG, outPath, pathNET, pathSummaryFile, numLocs, initialPoiLocation = (5064.74,3568.48)):
         
         # Check for Bash Shortcut
         if "SUMO_HOME" in os.environ:
@@ -80,7 +80,6 @@ class StressJunction:
             sys.exit("Please populate $SUMO_HOME in your .bashrc file.") 
 
         # Assign all variables
-        self.maxTimeSteps = maxTimeSteps    
         self.weightsArray = weightsArray
         self.pathCFG = pathCFG
         self.outPath = outPath

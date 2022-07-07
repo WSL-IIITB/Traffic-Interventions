@@ -13,7 +13,7 @@ class EmissionJunction:
     """
         @Method: Initialising variables and config
     """
-    def __init__(self, maxTimeSteps, pathCFG, outPath, pathNET, pathSummaryFile, numLocs, initialPoiLocation = (5064.74,3568.48)):
+    def __init__(self, pathCFG, outPath, pathNET, pathSummaryFile, numLocs, initialPoiLocation = (5064.74,3568.48)):
         
         # Check for Bash Shortcut
         if "SUMO_HOME" in os.environ:
@@ -25,7 +25,6 @@ class EmissionJunction:
             sys.exit("Please populate $SUMO_HOME in your .bashrc file.") 
 
         # Assign all variables
-        self.maxTimeSteps = maxTimeSteps
         self.pathCFG = pathCFG 
         self.outPath = outPath 
         self.pathNET = pathNET

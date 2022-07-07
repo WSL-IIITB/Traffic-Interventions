@@ -117,7 +117,7 @@ class SpeedCamera:
     """
         @Method: Initialing variables and config
     """
-    def __init__(self, maxTimeSteps, nearestNeighbourDisallow, gridArray, pathCFG, outPath, summaryFilePath, numLocs):
+    def __init__(self, maxTimeSteps, nearestNeighbourDisallow, gridArray, pathCFG, outPath, summaryFilePath, numLocs, colour):
         
         # Check for Bash Shortcut
         if "SUMO_HOME" in os.environ:
@@ -139,6 +139,7 @@ class SpeedCamera:
         self.outPath = outPath
         self.summaryFilePath = summaryFilePath
         self.numLocs = numLocs
+        self.colour = colour 
 
         # Option Parser
         optParser = optparse.OptionParser()
@@ -217,7 +218,7 @@ class SpeedCamera:
                             except Exception as e:
                                 print(e)
                     self.previousPOI = []
-                    traci.poi.add(poiID=nid, x = positionsList[i][0], y = positionsList[i][1], layer = 202.0, color = (255,0,0))
+                    traci.poi.add(poiID=nid, x = positionsList[i][0], y = positionsList[i][1], layer = 202.0, color = self.colour)
                     traci.gui.toggleSelection(nid, objType='poi')
                     self.previousPOI.append(nid)
 

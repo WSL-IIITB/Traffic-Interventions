@@ -2,7 +2,6 @@ import trafficinterventions
  
 # Initialiasing the object
 ej = trafficinterventions.EmissionJunction.EmissionJunction(
-    maxTimeSteps=1000, # Number of time steps, could be overridden by the system
     pathCFG="map.sumocfg", # .sumocfg file path
     outPath="Outputs/", # Output path for screenshots
     pathNET="osm.net.xml", # .net.xml file path
